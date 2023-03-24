@@ -1,13 +1,7 @@
 import React from "react";
 import Die from "./die";
 import { nanoid } from "nanoid";
-/**
- * Challenge:
- * 1. Add new state called `tenzies`, default to false. It
- *    represents whether the user has won the game yet or not.
- * 2. Add an effect that runs every time the `dice` state array 
- *    changes. For now, just console.log("Dice state changed").
- */
+import Confetti from "react-confetti";
 
 export default function App() {
     function allNewDice() {
@@ -76,6 +70,7 @@ export default function App() {
                 ))}
             </div>
             <button onClick={rollDice}>Roll</button>
+            {tenzies && <Confetti />}
         </main>
     );
 }
